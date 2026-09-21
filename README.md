@@ -47,6 +47,7 @@ Utilizes Groq-hosted language models for fast and accurate reasoning.
 Simple and responsive frontend built with HTML, CSS, and JavaScript.
 
 🏗️ System Architecture
+
 User Request
       │
       ▼
@@ -63,18 +64,25 @@ Agent  Agent Agent   Agent
       │
       ▼
      User
+
 🛠️ Technology Stack
-Category	Technologies
-Programming	Python 3.10+
-Backend	FastAPI
-AI Framework	LangGraph, LangChain
-LLM	Groq
-Database	PostgreSQL
-Search	Tavily API
-Flight Data	AviationStack API
-Frontend	HTML, CSS, JavaScript
-Templating	Jinja2
+
+| Category     | Technologies          |
+| ------------ | --------------------- |
+| Programming  | Python 3.10+          |
+| Backend      | FastAPI               |
+| AI Framework | LangGraph, LangChain  |
+| LLM          | Groq                  |
+| Database     | PostgreSQL            |
+| Search       | Tavily API            |
+| Flight Data  | AviationStack API     |
+| Frontend     | HTML, CSS, JavaScript |
+| Templating   | Jinja2                |
+
+
+
 📂 Project Structure
+
 TripMate-AI/
 │
 ├── app.py                  # FastAPI application entry point
@@ -91,6 +99,7 @@ TripMate-AI/
 └── tools/                  # External integrations
     ├── flight_tool.py
     └── tavily_tool.py
+
 ⚙️ Prerequisites
 
 Before running the application, ensure you have:
@@ -104,6 +113,7 @@ AviationStack API Key
 
 Create a .env file in the project root:
 
+
 DATABASE_URL=postgresql://user:password@localhost:5432/travel_db
 
 GROQ_API_KEY=your_groq_api_key
@@ -112,51 +122,44 @@ AVIATIONSTACK_API_KEY=your_aviationstack_api_key
 
 TAVILY_API_KEY=your_tavily_api_key
 
-DEFAULT_ORIGIN_IATA=DAC
-📦 Installation
-Clone the Repository
-git clone https://github.com/yourusername/TripMate-AI.git
-cd TripMate-AI
-Create Virtual Environment
+DEFAULT_ORIGIN_IATA=DEL
+
+
+Installation 
+
 python -m venv .venv
-Activate Environment
-
-Windows
-
-.venv\Scripts\activate
-
-Linux / macOS
-
-source .venv/bin/activate
-Install Dependencies
+source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-▶️ Running the Application
+
+
+Running the App
+
 
 Start the FastAPI server:
 
 python app.py
+Then open your browser at:
 
-Open your browser and visit:
+http://127.0.0.1:8000/
+API Endpoints
+GET /health - Health check
+POST /api/travel - Submit a travel request
+Example request:
 
-http://127.0.0.1:8000
-🔌 API Endpoints
-Health Check
-GET /health
-Travel Planning Endpoint
-POST /api/travel
-Sample Request
 curl -X POST http://127.0.0.1:8000/api/travel \
--H "Content-Type: application/json" \
--d '{
-  "message":"Plan a 3-day trip to Tokyo with a budget of $1200"
-}'
-🔄 Workflow Execution
-User submits a travel request.
-Flight Agent gathers flight-related insights.
-Hotel Agent searches for accommodation options.
-Itinerary Agent creates a structured travel schedule.
-Final Response Agent consolidates all outputs.
-The completed travel plan is returned to the user.
+  -H "Content-Type: application/json" \
+  -d '{"message":"Plan a 3-day trip to Tokyo with a budget of $1200"}'
+  
+
+How the Workflow Works
+
+
+The user submits a travel request.
+The flight agent gathers flight-related information.
+The hotel agent searches for accommodation suggestions.
+The itinerary agent creates a practical travel plan.
+The final agent formats the result into a polished response.
+
 🎯 Learning Outcomes
 
 This project demonstrates:
@@ -170,6 +173,8 @@ State Management
 FastAPI Backend Development
 PostgreSQL Integration
 Production-Ready AI Architecture
+
+
 🤝 Contributing
 
 Contributions are welcome!
@@ -181,6 +186,9 @@ Create a feature branch
 Implement your changes
 Commit and push
 Open a Pull Request
+
+
 🙏 Acknowledgments
 
 This project was created as a practical demonstration of building real-world AI applications using modern agentic frameworks such as LangGraph, LangChain, and FastAPI, combined with travel intelligence APIs and Large Language Models.
+
