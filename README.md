@@ -48,22 +48,16 @@ Simple and responsive frontend built with HTML, CSS, and JavaScript.
 
 🏗️ System Architecture
 
-User Request
-      │
-      ▼
-Travel Planning Workflow (LangGraph)
-      │
- ┌────┼────┬─────────┐
- │    │    │         │
- ▼    ▼    ▼         ▼
-Flight Hotel Itinerary Final
-Agent  Agent Agent   Agent
-      │
-      ▼
- Consolidated Travel Plan
-      │
-      ▼
-     User
+
+.
+├── app.py                # FastAPI app entry point
+├── backend.py            # LangGraph travel workflow
+├── requirements.txt      # Python dependencies
+├── static/               # Static frontend assets
+├── templates/            # HTML templates
+└── tools/                # Flight and web search integrations
+
+
 
 🛠️ Technology Stack
 
