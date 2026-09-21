@@ -11,3 +11,6 @@ TripMate AI — A Multi-Agent Travel Planner with LangGraph
 3. Install Requirements
 
    pip install -r requirements.txt
+
+
+postgresql://keshavd:7Of89OZTOfUjwXmzYUic70ATqqyHXWQw@dpg-daom5t8473hc73cuu7og-a.oregon-postgres.render.com/agentmemory_opfe
